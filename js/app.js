@@ -1,8 +1,7 @@
 function showSize() {
     var w = window.innerWidth;
-    // var h = window.innerHeight;
-    document.getElementById('size').innerHTML = "W: " + w ;
-}              // + " H: " + h; add if you also want height 
+    document.getElementById('size').innerHTML = "W: " + w;
+}
 showSize();
 
 // (function(){
