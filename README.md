@@ -13,8 +13,8 @@
 * animate (css)
 * p5
 * p5Dom
-* play
-* sound
+* p5play
+* p5sound
 
 ### Dependencies 
 
