@@ -4,12 +4,15 @@
 * Normalize 
 * Font Awesome (icons)
 * JQuery
+* ReactJS
+* ReactJS Dom
+* Babel
 
 ### Local
-* responsive grid (grid.css)
+* responsive grid (modest-grid.css)
 * animate (css)
 * p5
-* dom
+* p5Dom
 * play
 * sound
 
