@@ -3,8 +3,8 @@
 #size
   position: absolute
   top: 0
-  right: 7px
-  +meri(1.3, 100, 1.6, $notBlack)
+  right: 3px
+  +meri(1.3, 100, .2, $notBlack)
 //
 $reset-font:          $neue, sans-serif
 $reset-font-size:     62.5%
@@ -14,9 +14,9 @@ $reset-padding:       0 // 4.8rem golden ratio for descendants
 $reset-body-bg:       lighten(#eee, 5%)
 html
   font-size: $reset-font-size
-  +break(800px, 1px)
+  +break(767px, 1px)
     font-size: 90%
-  +break(1099px, 801px)
+  +break(1099px, 768px)
     font-size: 92.5%
   +break(1599px, 1100px)
     font-size: 95%
@@ -24,13 +24,8 @@ html
     font-size: 125%
 body
   font-size: 1.6em // 16px
-  line-height:  $reset-line-height
   font-family:  $reset-font
-  +meri(1.6, 100, 1.6, $notBlack)
   margin: $reset-margin
-  padding: 4.8rem
-  +break(800px)
-    padding: 1.5rem
   background-color: $reset-body-bg  
 // LET THERE BE LIGHT
 

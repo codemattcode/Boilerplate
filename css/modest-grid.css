@@ -1,45 +1,84 @@
-/*** =============================== ***//*
-  .container (default 60em/960px)
+
+/*
+
+  .container (90% <= 1175px)
     .row
       .col-6 .col-6 (total = 12)
-*/ 
-/*** =============================== ***/
+      .col-push-4 (horizontal spacing only so requires adding a custom class with vertical padding (to taste))
+      .hide-sm (remove content below 768px)
+*/
 
 
 /* ==== GRID SYSTEM ==== */
 
-.container {
+.wrapper {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
-
+.wrapper:first-of-type {
+  margin-top: 0%;
+}
 .row {
   position: relative;
   width: 100%;
 }
 
+/* ******************************************** */
+
+/* MARGINS ABOVE 768px */
 .row [class^="col"] {
   float: left;
-  margin: 0.5rem 2%;
-  min-height: 0.125rem;
+  margin: 2% 2%;
+  min-height: 1px;
 }
 
+/* MARGINS BELOW 768px */
+@media only screen and (max-width: 768px) {
+  .row [class^="col"] {
+  margin: 3% 2%;  
+  }
+}
+
+/* no vertical margin on push 'spacers' */
+.row [class^="col-push"] {
+  float: left;
+  margin: 0% 2%;
+  min-height: 1px;
+}
+
+/* ******************************************** */
+
+/* full width on mobile */
 .col-1,
 .col-2,
 .col-3,
 .col-4,
-.col-5,
+.col-5, 
 .col-6,
 .col-7,
 .col-8,
 .col-9,
 .col-10,
 .col-11,
-.col-12 {
+.col-12,
+.col-push-1,
+.col-push-2,
+.col-push-3,
+.col-push-4,
+.col-push-5,
+.col-push-6,
+.col-push-7,
+.col-push-8,
+.col-push-9,
+.col-push-10,
+.col-push-11,
+.col-push-12 {
   width: 96%;
 }
 
+
+/* grid for mobile */
 .col-1-sm {
   width: 4.33%;
 }
@@ -88,81 +127,157 @@
   width: 96%;
 }
 
-.row::after {
-	content: "";
-	display: table;
-	clear: both;
+/* ******************************************** */
+
+/* clearfix */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
+/* hide on mobile */
 .hide-sm {
   display: none;
 }
 
 /* ******************************************** */
-/* switch from mobile first to 1040px and above */
+/* switch from mobile first to 768px and above */
 /* ******************************************** */
 
-@media only screen and (min-width: 1040px) { 
+@media only screen and (min-width: 768px) { 
   .col-1 {
     width: 4.33%;
+  }
+  .col-push-1 {
+    width: 4.33%;
+  }
+  .col-push-1:before, .col-push-1:after {
+    content: "";
   }
 
   .col-2 {
     width: 12.66%;
   }
+  .col-push-2 {
+    width: 12.66%;
+  }
+  .col-push-2:before, .col-push-2:after {
+    content: "";
+  }
 
   .col-3 {
     width: 21%;
+  }
+  .col-push-3 {
+    width: 21%;
+  }
+  .col-push-3:before, .col-push-3:after {
+    content: "";
   }
 
   .col-4 {
     width: 29.33%;
   }
+  .col-push-4 {
+    width: 29.33%;
+  }
+  .col-push-4:before, .col-push-4:after {
+    content: "";
+  }
 
   .col-5 {
     width: 37.66%;
+  }
+  .col-push-5 {
+    width: 37.66%;
+  }
+  .col-push-5:before, .col-push-5:after {
+    content: "";
   }
 
   .col-6 {
     width: 46%;
   }
+  .col-push-6 {
+    width: 46%;
+  }
+  .col-push-6:before, .col-push-6:after {
+    content: "";
+  }
 
   .col-7 {
     width: 54.33%;
+  }
+  .col-push-7 {
+    width: 54.33%;
+  }
+  .col-push-7:before, .col-push-7:after {
+    content: "";
   }
 
   .col-8 {
     width: 62.66%;
   }
+  .col-push-8 {
+    width: 62.66%;
+  }
+  .col-push-8:before, .col-push-8:after {
+    content: "";
+  }
 
   .col-9 {
     width: 71%;
+  }
+  .col-push-9 {
+    width: 71%;
+  }
+  .col-push-9:before, .col-push-9:after {
+    content: "";
   }
 
   .col-10 {
     width: 79.33%;
   }
+  .col-push-10 {
+    width: 79.33%;
+  }
+  .col-push-10:before, .col-push-10:after {
+    content: "";
+  }
 
   .col-11 {
     width: 87.66%;
+  }
+  .col-push-11 {
+    width: 87.66%;
+  }
+  .col-push-11:before, .col-push-11:after {
+    content: "";
   }
 
   .col-12 {
     width: 96%;
   }
-
+  .col-push-12 {
+    width: 96%;
+  }
+  .col-push-12:before, .col-push-12:after {
+    content: "";
+  }
+  
   .hide-sm {
     display: block;
   }
 }
 
 /* ******************************************** */
-/* set maximum container width to 960px */
+/* set maximum wrapper width to 1175px */
 /* ******************************************** */
 
-@media only screen and (min-width: 60rem) {
-  .container {
+@media only screen and (min-width: 1175px) {
+  .wrapper {
     width: 90%;
-    max-width: 60rem;
+    max-width: 1175px;
   }
 }
