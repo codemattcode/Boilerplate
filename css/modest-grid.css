@@ -1,7 +1,7 @@
 
 /*
 
-  .container (90% <= 1175px)
+  .wrapper (90% <= 1175px)
     .row
       .col-6 .col-6 (total = 12)
       .col-push-4 (horizontal spacing only so requires adding a custom class with vertical padding (to taste))
@@ -36,7 +36,7 @@
 /* MARGINS BELOW 768px */
 @media only screen and (max-width: 768px) {
   .row [class^="col"] {
-  margin: 3% 2%;  
+  margin: 2% 2%;  
   }
 }
 
