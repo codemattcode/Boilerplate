@@ -4,16 +4,6 @@
 * Normalize 
 * Font Awesome (icons)
 * JQuery
-* ReactJS
-* ReactJS Dom
-* Babel
-
-### Local
-* animate (css)
-* p5
-* p5Dom
-* p5play
-* p5sound
 
 ### Dependencies 
 
