@@ -9,7 +9,6 @@
 * Babel
 
 ### Local
-* responsive grid (modest-grid.css)
 * animate (css)
 * p5
 * p5Dom
