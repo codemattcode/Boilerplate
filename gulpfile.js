@@ -11,34 +11,71 @@ var gulp          = require('gulp'),
     del           = require('del'),
     rename        = require('gulp-rename');
 
+
+
+
+
+
+
+
+
+
 //sass to css conversion and compression
 gulp.task('sass', function() {
   var processors = [
       autoprefixer({browsers: ['last 3 versions']}),
   ];
   return sass('sass/style.sass', {
-  style: 'compressed', })
+  style: 'nested', })
   .pipe(plumber())
   .pipe(gulp.dest('css/'))
   .pipe(reload({stream:true}));
 });
 
+
+
+
+
+
+
+
+
+
 //javascript compression / transpile
 gulp.task('js', function() {
-  gulp.src('js/app.js')
+  return gulp.src('js/*.js')
   .pipe(babel())
   .pipe(plumber())
-  .pipe(rename({suffix:'.min'}))
+  .pipe(rename({suffix:'-min'}))
   .pipe(uglify())
-  .pipe(gulp.dest('js-min/'))
+  .pipe(gulp.dest('js/min/'))
   .pipe(reload({stream:true}));
 });
+
+
+
+
+
+
+
+
+
 
 //html tasks
 gulp.task('html', function() {
   gulp.src('*.html')
   .pipe(reload({stream:true}));
 });
+
+
+
+
+
+
+
+
+
+
 
 //final production build
 gulp.task('build:copy', function() {
@@ -49,7 +86,6 @@ gulp.task('build:copy', function() {
 gulp.task('build:delete', ['build:copy'], function(cb) {
   del([
     'build/sass',
-    'build/js',
     'build/node_modules',
     'build/gulpfile.js',
     'build/package.json',
@@ -57,6 +93,14 @@ gulp.task('build:delete', ['build:copy'], function(cb) {
 });
 
 gulp.task('build', ['build:copy', 'build:delete']);
+
+
+
+
+
+
+
+
 
 //browserSync
 gulp.task('browser-sync', function() {
@@ -68,12 +112,27 @@ gulp.task('browser-sync', function() {
   });
 });
 
+
+
+
+
+
+
+
 // watch
 gulp.task('watch', function() {
   gulp.watch('sass/*.sass', ['sass']);
   gulp.watch('js/*.js', ['js']);
   gulp.watch('*.html', ['html']);
 });
+
+
+
+
+
+
+
+
 
 //default tasks
 gulp.task('default', ['sass', 'js', 'html', 'browser-sync', 'watch']);
